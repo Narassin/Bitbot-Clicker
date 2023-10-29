@@ -32,10 +32,10 @@
 
       <!-- Links -->
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-primary "><i class="bi bi-megaphone-fill"></i></button>
-        <button type="button" class="btn btn-outline-primary"><i class="bi bi-coin"></i></button>
-        <i class="btn btn-success bi bi-share-fill"></i>
-        <i class="btn btn-dark bi bi-arrow-bar-up"></i>
+        <a type="button" class="btn btn-danger" href="https://forms.gle/DwEfhkSVXSEME1Ru9" target="_blank"><i class="bi bi-megaphone-fill"></i></a>
+        <a type="button" class="btn btn-dark" href="https://ko-fi.com/captain_narassin" target="_blank"><i class="bi bi-coin"></i></a>
+        <i class="btn btn-dark bi bi-share-fill"></i>
+        <i class="btn btn-light bi bi-caret-up-fill"></i>
       </div>
     </header>
   </div>
@@ -112,8 +112,9 @@
       coinsfx.play();
       score += clickValue;
 
-      // Update innerText of span to show new score 
-      bitBTCSpan.innerText = " " + score;
+      // Update innerText of span to show new score
+      let scorey = score.toFixed(2);
+      bitBTCSpan.innerText = " " + scorey;
     });
 
     // Upgrade Button
