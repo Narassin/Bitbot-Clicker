@@ -64,9 +64,22 @@
         <h2 class="text-center fw-bold">Current Investor</h2>
         <div class="d-flex flex-wrap justify-content-center">
           <!-- All bought investor -->
-          <div id="marucoin" class="p-3 text-center shadows m-1 rounded bg-danger-subtle" style="display: none;">
+          <div id="barco1" class="p-3 text-center shadows m-1 rounded bg-danger-subtle" style="display: none;">
             <h1 class="display-4 fw-bold">MaruMaru Co. <span class="fw-normal fs-5">Level 1</span></h1>
           </div>
+          <div id="barco2" class="p-3 text-center shadows m-1 rounded bg-danger-subtle" style="display: none;">
+            <h1 class="display-4 fw-bold">Valo Addict. <span class="fw-normal fs-5">Level 1</span></h1>
+          </div>
+          <div id="barco3" class="p-3 text-center shadows m-1 rounded bg-danger-subtle" style="display: none;">
+            <h1 class="display-4 fw-bold">Karaoke Stream <span class="fw-normal fs-5">Level 1</span></h1>
+          </div>
+          <div id="barco4" class="p-3 text-center shadows m-1 rounded bg-danger-subtle" style="display: none;">
+            <h1 class="display-4 fw-bold">Mahjong <span class="fw-normal fs-5">Level 1</span></h1>
+          </div>
+          <div id="barco5" class="p-3 text-center shadows m-1 rounded bg-danger-subtle" style="display: none;">
+            <h1 class="display-4 fw-bold">Bromo Ch<span class="fw-normal fs-5">Level 1</span></h1>
+          </div>
+          
         </div>
       </div>
 
@@ -75,13 +88,21 @@
       <div class="col-4 bg-dark-subtle shadow py-2">
         <h3 class="text-center fw-bold">Investors Shop</h3>
         <div class="d-flex flex-wrap justify-content-center">
-          <button class="btn btn-primary m-2" id="up1">Hardware Upgrade <span style="font-size: 11px;">[10
-              BitBTC]</span></button>
-          <button class="btn btn-primary m-2" id="maruco">MaruMaru Co. <span style="font-size: 11px;">[50
-              BitBTC]</span></button>
-          <!-- <button class="btn btn-primary m-2">Valorant <span style="font-size: 11px;">[1k BitBTC]</span></button>
-          <button class="btn btn-primary m-2">Stock Market <span style="font-size: 11px;">[10k BitBTC]</span></button>
-          <button class="btn btn-primary m-2">Bitbotcoin Stream <span style="font-size: 11px;">[1M BitBTC]</span></button>   -->
+          <!-- Upgrades -->
+          <button class="btn btn-primary m-2" id="up1">CPU Upgrade <span style="font-size: 11px;">[10BitBTC]</span></button>
+          <button class="btn btn-primary m-2" id="up2">GPU Upgrade<span style="font-size: 11px;">[1k BitBTC]</span></button>
+          <button class="btn btn-primary m-2" id="up3">Internet Upgrade<span style="font-size: 11px;">[5k BitBTC]</span></button>
+          <button class="btn btn-primary m-2" id="up4">Extra PC <span style="font-size: 11px;">[20k BitBTC]</span></button>
+          <button class="btn btn-primary m-2" id="up5">Cooler Upgrade<span style="font-size: 11px;">[75k BitBTC]</span></button>
+          
+          <!-- Investor -->
+          <button class="btn btn-primary m-2" id="inv1">MaruMaru Co. <span style="font-size: 11px;">[50BitBTC]</span></button>  
+          <button class="btn btn-primary m-2" id="inv2">Valorant Addict <span style="font-size: 11px;">[100k BitBTC]</span></button>
+          <button class="btn btn-primary m-2" id="inv3">Karaoke Stream <span style="font-size: 11px;">[500k BitBTC]</span></button>
+          <button class="btn btn-primary m-2" id="inv4">Mahjong winning Streak <span style="font-size: 11px;">[1M BitBTC]</span></button>
+          <button class="btn btn-primary m-2" id="inv5">??? <span style="font-size: 11px;">[5M BitBTC]</span></button>  
+          <!-- bromo -->
+          
         </div>
 
       </div>
@@ -94,9 +115,21 @@
     const multbox = document.getElementById('multi');
     const invbox = document.getElementById('invest');
     const bitClickImg = document.getElementById('bitclick');
-    const upBtn = document.getElementById('up1');
-    const maruBtn = document.getElementById('maruco');
-    const marubar = document.getElementById('marucoin');
+    const up1 = document.getElementById('up1');
+    const up2 = document.getElementById('up2');
+    const up3 = document.getElementById('up3');
+    const up4 = document.getElementById('up4');
+    const up5 = document.getElementById('up5');
+    const inv1 = document.getElementById('inv1');
+    const inv2 = document.getElementById('inv2');
+    const inv3 = document.getElementById('inv3');
+    const inv4 = document.getElementById('inv4');
+    const inv5 = document.getElementById('inv5');
+    const barco1 = document.getElementById('barco1');
+    const barco2 = document.getElementById('barco2');
+    const barco3 = document.getElementById('barco3');
+    const barco4 = document.getElementById('barco4');
+    const barco5 = document.getElementById('barco5');
 
     // Varible
     let score = 0; // Initial start score
@@ -118,7 +151,8 @@
     });
 
     // Upgrade Button
-    upBtn.addEventListener('click', () => {
+    // Upgrade 1
+    up1.addEventListener('click', () => {
       // Only buy when bitbtc is more than 10
       if (score >= 10) {
         // Update click value to 0.25
@@ -127,15 +161,85 @@
         buysfx.play();
         multbox.innerText = 'x' + clickValue;
         // Disable button
-        upBtn.disabled = true;
+        up1.disabled = true;
         // Update button text
-        upBtn.textContent = 'Purchased x0.25';
+        up1.textContent = 'Purchased x0.25';
 
       }
     });
 
-    // Upgrade Button
-    maruBtn.addEventListener('click', () => {
+    // Upgrade 2
+    up2.addEventListener('click', () => {
+      // Only buy when bitbtc is more than 10
+      if (score >= 10) {
+        // Update click value to 0.25
+        score-=10;
+        clickValue += 0.25;
+        buysfx.play();
+        multbox.innerText = 'x' + clickValue;
+        // Disable button
+        up2.disabled = true;
+        // Update button text
+        up2.textContent = 'Purchased x0.25';
+
+      }
+    });
+
+// Upgrade 2
+up3.addEventListener('click', () => {
+  // Only buy when bitbtc is more than 10
+  if (score >= 10) {
+    // Update click value to 0.25
+    score-=10;
+    clickValue += 0.25;
+    buysfx.play();
+    multbox.innerText = 'x' + clickValue;
+    // Disable button
+    up3.disabled = true;
+    // Update button text
+    up3.textContent = 'Purchased x0.25';
+
+  }
+});
+
+// Upgrade 2
+up4.addEventListener('click', () => {
+  // Only buy when bitbtc is more than 10
+  if (score >= 10) {
+    // Update click value to 0.25
+    score-=10;
+    clickValue += 0.25;
+    buysfx.play();
+    multbox.innerText = 'x' + clickValue;
+    // Disable button
+    up4.disabled = true;
+    // Update button text
+    up4.textContent = 'Purchased x0.25';
+
+  }
+});
+
+
+// Upgrade 2
+up5.addEventListener('click', () => {
+  // Only buy when bitbtc is more than 10
+  if (score >= 10) {
+    // Update click value to 0.25
+    score-=10;
+    clickValue += 0.25;
+    buysfx.play();
+    multbox.innerText = 'x' + clickValue;
+    // Disable button
+    up5.disabled = true;
+    // Update button text
+    up5.textContent = 'Purchased x0.25';
+
+  }
+});
+
+    // Invest Button
+    //Investment 1
+    inv1.addEventListener('click', () => {
       // Only buy when bitbtc is more than 10
       if (score >= 50) {
         // Update click value to 0.25
@@ -144,12 +248,79 @@
         buysfx.play();
         invbox.innerText = 'x' + investor + 'bitbtc/sec';
         // Disable button
-        maruBtn.disabled = true;
+        inv1.disabled = true;
         // Update button text
-        maruBtn.textContent = 'Invested x0.05';
-        marubar.style.display = 'block';
+        inv1.textContent = 'Invested x0.05';
+        barco1.style.display = 'block';
       }
     });
+
+  // Investment 2
+  inv2.addEventListener('click', () => {
+    // Only buy when bitbtc is more than 10
+    if (score >= 10) {
+      // Update click value to 0.25
+      score-=10;
+      investor += 0.05;
+      buysfx.play();
+      invbox.innerText = 'x' + investor + 'bitbtc/sec';
+      // Disable button
+      inv2.disabled = true;
+      // Update button text
+      inv2.textContent = 'Invested x0.05';
+      barco2.style.display = 'block';
+    }
+  });
+  // Investment 3
+  inv3.addEventListener('click', () => {
+    // Only buy when bitbtc is more than 10
+    if (score >= 10) {
+      // Update click value to 0.25
+      score-=50;
+      investor += 0.05;
+      buysfx.play();
+      invbox.innerText = 'x' + investor + 'bitbtc/sec';
+      // Disable button
+      inv3.disabled = true;
+      // Update button text
+      inv3.textContent = 'Invested x0.05';
+      barco3.style.display = 'block';
+    }
+  });  
+  
+  // Investment 4
+  inv4.addEventListener('click', () => {
+    // Only buy when bitbtc is more than 10
+    if (score >= 10) {
+      // Update click value to 0.25
+      score-=50;
+      investor += 0.05;
+      buysfx.play();
+      invbox.innerText = 'x' + investor + 'bitbtc/sec';
+      // Disable button
+      inv4.disabled = true;
+      // Update button text
+      inv4.textContent = 'Invested x0.05';
+      barco4.style.display = 'block';
+    }
+  });
+
+  // Investment 5
+  inv5.addEventListener('click', () => {
+    // Only buy when bitbtc is more than 10
+    if (score >= 10) {
+      // Update click value to 0.25
+      score-=50;
+      investor += 0.05;
+      buysfx.play();
+      invbox.innerText = 'x' + investor + 'bitbtc/sec';
+      // Disable button
+      inv5.disabled = true;
+      // Update button text
+      inv5.textContent = 'Invested x0.05';
+      barco5.style.display = 'block';
+    }
+  });
 
     // Update score every second
     setInterval(() => {
@@ -163,3 +334,8 @@
 </body>
 
 </html>
+
+<!-- 
+  Yowamushi pedal
+  
+ -->
